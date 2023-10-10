@@ -1,5 +1,5 @@
 import React from 'react'
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonPage } from '@ionic/react';
 import Claps from '../assets/Claps.png'
 import './signin.css'
 
@@ -18,7 +18,7 @@ const SignIn:React.FC = () => {
             <p>welcome back</p>
           </div>
 
-          <form>
+          <form className='signin-form'>
             <input type='email'
             placeholder='lawyer@gmail.com'
             required/>
@@ -28,18 +28,19 @@ const SignIn:React.FC = () => {
             required />
 
             <div className='forgot-password'>
-              <small>Forget password?</small>
+              <a href='/forget-password'>Forget password?</a>
             </div>
 
-            <button type='submit'>
+            <button type='submit'
+            className='submit-button'>
               Login
             </button>
           </form>
 
           <div className='account-signup'>
-            <h2>Don't have account? 
+            <h4>Don't have account? 
               <a href='/signup'>Sign Up</a>
-            </h2>
+            </h4>
           </div>
         </div>
       </IonContent>
