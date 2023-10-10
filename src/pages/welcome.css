@@ -1,0 +1,35 @@
+.welcome-container {
+    height: 100%;
+    padding-top: 80%;
+    background-color: white !important;
+}
+
+.state-container {
+    padding-top: 90%;
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+    align-items: center !important;
+}
+
+.state-container ion-icon {
+    font-size: 4rem;
+    z-index: 2;
+    color: rgb(68, 68, 68);
+}
+
+.state-container ion-icon.active  {
+    color: black;
+}
+
+.next-container {
+    margin-top: -5%;
+    margin-left: 9%;
+    display: flex;
+    position: sticky;
+}
+
+.state-container span {
+    font-size: 1.3rem;
+    color: rgb(34, 33, 33) !important;
+}
