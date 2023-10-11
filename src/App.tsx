@@ -44,6 +44,9 @@ import ResetPassword from './pages/ResetPassword';
 import Profile from './pages/Profile';
 import Account from './pages/Account';
 import Security from './pages/Security';
+import Notification from './pages/Notification';
+import Availability from './pages/Availability';
+import AboutUs from './pages/AboutUs';
 
 setupIonicReact();
 
@@ -88,6 +91,18 @@ const App: React.FC = () => (
 
       <Route exact path="/security">
         <Security />
+      </Route>
+
+      <Route exact path="/notification">
+        <Notification />
+      </Route>
+
+      <Route exact path="/availability">
+        <Availability />
+      </Route>
+
+      <Route exact path="/about-us">
+        <AboutUs />
       </Route>
     </IonReactRouter>
   </IonApp>
