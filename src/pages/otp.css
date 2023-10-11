@@ -1,0 +1,22 @@
+.otp_container {
+    width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.otp-not-found {
+    padding-left: 5%;
+    display: flex;
+    gap: 9%;
+    width: 100%;
+}
+
+.otp-not-found p {
+    width: 100%;
+}
+
+.otp-not-found a {
+    margin-left: 3%;
+    color: black;
+    font-weight: bold;
+}

@@ -1,0 +1,56 @@
+.header-container {
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    padding-left: 6%;
+    padding-right: 6%;
+}
+
+ion-icon {
+    font-size: 2rem;
+    display: flex;
+    align-items: baseline;
+}
+
+.change-profile-container {
+    background-color: rgb(179, 179, 179);
+    margin-top: 10%;
+    border-radius: 50%;
+    height: 110px;
+    width: 110px;
+    margin-left: 38%;
+}
+
+.change-profile-image img {
+    position: absolute;
+    margin-top: -48%;
+    margin-left: 100%;
+}
+
+.account-form {
+    display: flex;
+    flex-direction: column;
+    gap: 4%;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 8%;
+}
+
+.account-form input {
+    padding: 4%;
+    border-radius: 10px;
+    background-color: white;
+    border: 2px solid rgb(221, 220, 220);
+    margin-top: 2.5%;
+}
+
+.account-form label {
+    margin-top: 6%;
+}
+
+.account-form button {
+    background-color: black;
+    padding: 5%;
+    border-radius: 10px;
+    margin-top: 9%;
+}

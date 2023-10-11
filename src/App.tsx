@@ -37,6 +37,13 @@ import './theme/variables.css';
 import Splash from './pages/Splash';
 import Welcome from './pages/Welcome';
 import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+import ForgotPassword from './pages/ForgotPassword';
+import Otp from './pages/Otp';
+import ResetPassword from './pages/ResetPassword';
+import Profile from './pages/Profile';
+import Account from './pages/Account';
+import Security from './pages/Security';
 
 setupIonicReact();
 
@@ -53,6 +60,34 @@ const App: React.FC = () => (
 
       <Route exact path="/signin">
         <SignIn />
+      </Route>
+
+      <Route exact path="/signup">
+        <SignUp />
+      </Route>
+
+      <Route exact path="/forget-password">
+        <ForgotPassword />
+      </Route>
+
+      <Route exact path="/otp">
+        <Otp />
+      </Route>
+
+      <Route exact path="/reset-password">
+        <ResetPassword />
+      </Route>
+
+      <Route exact path="/profile">
+        <Profile />
+      </Route>
+
+      <Route exact path="/account">
+        <Account />
+      </Route>
+
+      <Route exact path="/security">
+        <Security />
       </Route>
     </IonReactRouter>
   </IonApp>
