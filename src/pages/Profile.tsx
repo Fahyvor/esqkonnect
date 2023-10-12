@@ -1,7 +1,8 @@
-import { IonContent, IonHeader, IonIcon, IonLabel, IonPage, IonTab, IonTabButton, IonTitle, IonToolbar } from "@ionic/react"
+import { IonContent, IonHeader, IonIcon, IonLabel, IonPage, IonTab, IonTabs, IonTabButton, IonTitle, IonToolbar, IonRouterOutlet } from "@ionic/react"
 import './profile.css'
-import { arrowForward, square } from "ionicons/icons"
+import { chevronForward, square } from "ionicons/icons"
 import Upload from '../assets/upload.png'
+// import Tab from "../components/Tab"
 
 const Profile:React.FC = () => {
   return (
@@ -17,7 +18,7 @@ const Profile:React.FC = () => {
                     <div className="profile-image">
                         .
                     </div>
-                    <div className="change-profile-image">
+                    <div className="profile-image-main">
                         <img src={Upload} />
                     </div>
 
@@ -38,7 +39,7 @@ const Profile:React.FC = () => {
                             </div>
 
                             <div className="card-right">
-                                <IonIcon icon={arrowForward}></IonIcon>
+                                <IonIcon icon={chevronForward}></IonIcon>
                             </div>
                         </div>
                         <hr />
@@ -50,7 +51,7 @@ const Profile:React.FC = () => {
                             </div>
 
                             <div className="card-right">
-                                <IonIcon icon={arrowForward}></IonIcon>
+                                <IonIcon icon={chevronForward}></IonIcon>
                             </div>
                         </div>
 
@@ -61,7 +62,7 @@ const Profile:React.FC = () => {
                             </div>
 
                             <div className="card-right">
-                                <IonIcon icon={arrowForward}></IonIcon>
+                                <IonIcon icon={chevronForward}></IonIcon>
                             </div>
                         </div>
 
@@ -72,7 +73,7 @@ const Profile:React.FC = () => {
                             </div>
 
                             <div className="card-right">
-                                <IonIcon icon={arrowForward}></IonIcon>
+                                <IonIcon icon={chevronForward}></IonIcon>
                             </div>
                         </div>
                         
@@ -89,7 +90,7 @@ const Profile:React.FC = () => {
                             </div>
 
                             <div className="more-card-right">
-                                <IonIcon icon={arrowForward}></IonIcon>
+                                <IonIcon icon={chevronForward}></IonIcon>
                             </div>
                         </div>
 
@@ -99,19 +100,19 @@ const Profile:React.FC = () => {
                             </div>
 
                             <div className="more-card-right">
-                                <IonIcon icon={arrowForward}></IonIcon>
+                                <IonIcon icon={chevronForward}></IonIcon>
                             </div>
                         </div>
 
                         <hr />
 
-                        <div className="more-cards">
+                        <div className="more-cards-logout">
                             <div className="more-cards-left">
                                 <h4>Delete Account</h4>
                             </div>
 
                             <div className="more-card-right">
-                                <IonIcon icon={arrowForward}></IonIcon>
+                                <IonIcon icon={chevronForward}></IonIcon>
                             </div>
                         </div>
                     </div>
@@ -119,27 +120,7 @@ const Profile:React.FC = () => {
             </div>
         </IonContent>
 
-        <IonTab tab="/" slot="bottom">
-            <IonTabButton tab="/" href="/">
-                <IonIcon icon={square} />
-                <IonLabel>Home</IonLabel>
-            </IonTabButton>
-
-            <IonTabButton tab="/" href="/">
-                <IonIcon icon={square} />
-                <IonLabel>Search</IonLabel>
-            </IonTabButton>
-
-            <IonTabButton tab="/" href="/">
-                <IonIcon icon={square} />
-                <IonLabel>Messages</IonLabel>
-            </IonTabButton>
-
-            <IonTabButton tab="/" href="/">
-                <IonIcon icon={square} />
-                <IonLabel>Profile</IonLabel>
-            </IonTabButton>
-        </IonTab>
+        {/* <Tab /> */}
     </IonPage>
   )
 }

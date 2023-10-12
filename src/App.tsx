@@ -47,64 +47,93 @@ import Security from './pages/Security';
 import Notification from './pages/Notification';
 import Availability from './pages/Availability';
 import AboutUs from './pages/AboutUs';
+// import Tab from './components/Tab';
 
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      <Route exact path="/">
-        <Splash />
-      </Route>
+      <IonTabs>
+        <IonRouterOutlet>
+          <Route exact path="/">
+            <Splash />
+          </Route>
 
-      <Route exact path="/welcome">
-        <Welcome />
-      </Route>
+          <Route exact path="/welcome">
+            <Welcome />
+          </Route>
 
-      <Route exact path="/signin">
-        <SignIn />
-      </Route>
+          <Route exact path="/signin">
+            <SignIn />
+          </Route>
 
-      <Route exact path="/signup">
-        <SignUp />
-      </Route>
+          <Route exact path="/signup">
+            <SignUp />
+          </Route>
 
-      <Route exact path="/forget-password">
-        <ForgotPassword />
-      </Route>
+          <Route exact path="/forget-password">
+            <ForgotPassword />
+          </Route>
 
-      <Route exact path="/otp">
-        <Otp />
-      </Route>
+          <Route exact path="/otp">
+            <Otp />
+          </Route>
 
-      <Route exact path="/reset-password">
-        <ResetPassword />
-      </Route>
+          <Route exact path="/reset-password">
+            <ResetPassword />
+          </Route>
 
-      <Route exact path="/profile">
-        <Profile />
-      </Route>
+          <Route exact path="/profile">
+            <Profile />
+          </Route>
 
-      <Route exact path="/account">
-        <Account />
-      </Route>
+          <Route exact path="/account">
+            <Account />
+          </Route>
 
-      <Route exact path="/security">
-        <Security />
-      </Route>
+          <Route exact path="/security">
+            <Security />
+          </Route>
 
-      <Route exact path="/notification">
-        <Notification />
-      </Route>
+          <Route exact path="/notification">
+            <Notification />
+          </Route>
 
-      <Route exact path="/availability">
-        <Availability />
-      </Route>
+          <Route exact path="/availability">
+            <Availability />
+          </Route>
 
-      <Route exact path="/about-us">
-        <AboutUs />
-      </Route>
+          <Route exact path="/about-us">
+            <AboutUs />
+          </Route>
+        </IonRouterOutlet>
+        <IonTabBar slot="bottom">
+              <IonTabButton tab="/" href="/">
+                  <IonIcon icon={square} />
+                  <IonLabel>Home</IonLabel>
+              </IonTabButton>
+
+              <IonTabButton tab="/search" href="/">
+                  <IonIcon icon={square} />
+                  <IonLabel>Search</IonLabel>
+              </IonTabButton>
+
+              <IonTabButton tab="/messages" href="/">
+                  <IonIcon icon={square} />
+                  <IonLabel>Messages</IonLabel>
+              </IonTabButton>
+
+              <IonTabButton tab="/profile" href="/">
+                  <IonIcon icon={square} />
+                  <IonLabel>Profile</IonLabel>
+              </IonTabButton>
+        </IonTabBar>
+        {/* <Tab /> */}
+      </IonTabs>
     </IonReactRouter>
+   
+        
   </IonApp>
 );
 
@@ -152,41 +181,41 @@ export default App;
 
 // const App: React.FC = () => (
 //   <IonApp>
-//     <IonReactRouter>
-//       <IonTabs>
-//         <IonRouterOutlet>
-//           <Route exact path="/">
-//             <Splash />
-//           </Route>
-//           <Route exact path="/tab1">
-//             <Tab1 />
-//           </Route>
-//           <Route exact path="/tab2">
-//             <Tab2 />
-//           </Route>
-//           <Route path="/tab3">
-//             <Tab3 />
-//           </Route>
-//           <Route exact path="/">
-//             <Redirect to="/tab1" />
-//           </Route>
-//         </IonRouterOutlet>
-//         <IonTabBar slot="bottom">
-//           <IonTabButton tab="tab1" href="/tab1">
-//             <IonIcon aria-hidden="true" icon={triangle} />
-//             <IonLabel>Tab 1</IonLabel>
-//           </IonTabButton>
-//           <IonTabButton tab="tab2" href="/tab2">
-//             <IonIcon aria-hidden="true" icon={ellipse} />
-//             <IonLabel>Tab 2</IonLabel>
-//           </IonTabButton>
-//           <IonTabButton tab="tab3" href="/tab3">
-//             <IonIcon aria-hidden="true" icon={square} />
-//             <IonLabel>Tab 3</IonLabel>
-//           </IonTabButton>
-//         </IonTabBar>
-//       </IonTabs>
-//     </IonReactRouter>
+//  <IonReactRouter>
+//    <IonTabs>
+//      <IonRouterOutlet>
+//        <Route exact path="/">
+//          <Splash />
+//        </Route>
+//        <Route exact path="/tab1">
+//          <Tab1 />
+//        </Route>
+//        <Route exact path="/tab2">
+//          <Tab2 />
+//        </Route>
+//        <Route path="/tab3">
+//          <Tab3 />
+//        </Route>
+//        <Route exact path="/">
+//          <Redirect to="/tab1" />
+//        </Route>
+//      </IonRouterOutlet>
+//      <IonTabBar slot="bottom">
+//        <IonTabButton tab="tab1" href="/tab1">
+//          <IonIcon aria-hidden="true" icon={triangle} />
+//          <IonLabel>Tab 1</IonLabel>
+//        </IonTabButton>
+//        <IonTabButton tab="tab2" href="/tab2">
+//          <IonIcon aria-hidden="true" icon={ellipse} />
+//          <IonLabel>Tab 2</IonLabel>
+//        </IonTabButton>
+//        <IonTabButton tab="tab3" href="/tab3">
+//          <IonIcon aria-hidden="true" icon={square} />
+//          <IonLabel>Tab 3</IonLabel>
+//        </IonTabButton>
+//      </IonTabBar>
+//    </IonTabs>
+//  </IonReactRouter>
 //   </IonApp>
 // );
 

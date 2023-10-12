@@ -1,6 +1,6 @@
 import React from 'react'
 import { IonContent, IonHeader, IonIcon, IonLabel, IonPage, IonTab, IonTabButton, IonTitle, IonToolbar } from "@ionic/react"
-import Upload from '../assets/upload.png'
+import UploadAccount from '../assets/uploadAccount.png'
 import { arrowBack } from 'ionicons/icons'
 import './account.css'
 
@@ -25,7 +25,7 @@ const Account:React.FC = () => {
                 .
                 </div>
                 <div className="change-profile-image">
-                    <img src={Upload} />
+                    <img src={UploadAccount} />
                 </div>
 
                 <div className='account-form-container'>

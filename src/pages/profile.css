@@ -27,7 +27,7 @@ ion-title {
     margin-top: -1%;
 }
 
-.change-profile-image {
+.profile-image-main {
     position: absolute;
     padding-right: 50%;
     padding-top: 15%;
@@ -66,6 +66,15 @@ ion-title {
     justify-content: space-between;
 }
 
+.more-cards-logout h4 {
+    color: red;
+}
+
+.more-cards-logout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .profile-container hr {
     background-color: gray;
     margin-top: -2%;
