@@ -8,7 +8,7 @@ import Claps from '../assets/Claps.png'
 const SignUp:React.FC = () => {
   return (
     <IonPage>
-        <IonContent>
+        <IonContent fullscreen>
             <div className='signup-container'>
             <div className='signup-image'>
                 <img src={Claps} />
@@ -40,9 +40,10 @@ const SignUp:React.FC = () => {
                 placeholder='Phone Number'
                 required />
 
-                <input type='text'
-                placeholder='User/Lawyer'
-                required />
+                <select id="userType" name="userType">
+                    <option value="lawyer">Lawyer</option>
+                    <option value="user">User</option>
+                </select>
 
                 <input type='password'
                 placeholder='password'

@@ -1,4 +1,5 @@
 import './index.css'
+import { useState } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
@@ -11,10 +12,12 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
-import Tab1 from './pages/Tab1';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
+import { 
+  homeOutline,
+  mailOutline,
+  personCircleOutline,
+  searchOutline
+} from 'ionicons/icons';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -51,7 +54,13 @@ import AboutUs from './pages/AboutUs';
 
 setupIonicReact();
 
-const App: React.FC = () => (
+const App: React.FC = () => {
+  const [activeTab, setActiveTab] = useState('profile');
+
+  const handleTabClick = (tabName) => {
+    setActiveTab(tabName);
+  };
+  return (
   <IonApp>
     <IonReactRouter>
       <IonTabs>
@@ -109,23 +118,32 @@ const App: React.FC = () => (
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-              <IonTabButton tab="/" href="/">
-                  <IonIcon icon={square} />
+              <IonTabButton tab="/" href="/"
+              className={activeTab === '/' ? 'active' : ''}
+              onClick={() => setActiveTab('/')}
+              >
+                  <IonIcon icon={homeOutline} />
                   <IonLabel>Home</IonLabel>
               </IonTabButton>
 
-              <IonTabButton tab="/search" href="/">
-                  <IonIcon icon={square} />
+              <IonTabButton tab="/search" href="/search"
+              className={activeTab === '/search' ? 'active' : ''}
+              onClick={() => setActiveTab('/search')}>
+                  <IonIcon icon={searchOutline} />
                   <IonLabel>Search</IonLabel>
               </IonTabButton>
 
-              <IonTabButton tab="/messages" href="/">
-                  <IonIcon icon={square} />
+              <IonTabButton tab="/messages" href="/messages"
+              className={activeTab === '/messages' ? 'active' : ''}
+              onClick={() => setActiveTab('/messages')}>
+                  <IonIcon icon={mailOutline} />
                   <IonLabel>Messages</IonLabel>
               </IonTabButton>
 
-              <IonTabButton tab="/profile" href="/">
-                  <IonIcon icon={square} />
+              <IonTabButton tab="/profile" href="/profile"
+              className={activeTab === '/profile' ? 'active' : ''}
+              onClick={() => setActiveTab('/profile')}>
+                  <IonIcon icon={personCircleOutline} />
                   <IonLabel>Profile</IonLabel>
               </IonTabButton>
         </IonTabBar>
@@ -135,7 +153,8 @@ const App: React.FC = () => (
    
         
   </IonApp>
-);
+  );
+};
 
 export default App;
 

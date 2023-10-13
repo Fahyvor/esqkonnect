@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { IonContent, IonIcon, IonPage} from '@ionic/react';
 import Lawyer from './Lawyer';
-import { BsDashLg } from 'react-icons/bs'
-import { IoIosRemove } from 'react-icons/io'
 import Client from './Client';
 import { remove } from 'ionicons/icons';
 import './welcome.css'
@@ -30,11 +28,12 @@ const Welcome: React.FC = () => {
     }
   return (
     <IonPage>
-        <IonContent fullscreen>
+        <IonContent>
         <div className='welcome-container'>
             <div>
             {lawyerState ? (<Lawyer />) : null}
             {clientState ? (<Client />) : null }
+            
             </div>
             <div className='state-container'>
                 <IonIcon
