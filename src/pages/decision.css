@@ -1,0 +1,37 @@
+.decision-container {
+    padding: 5%;
+    padding-top: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.lawyer-gateway {
+    box-shadow: 0px 0px 0px 2px;
+    background-color: white;
+    border-radius: 13px;
+    border: 0px solid;
+    padding: 2.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lawyer-gateway-left h2 {
+    font-weight: 600;
+}
+
+.client-gateway {
+    box-shadow: 0px 0px 0px 2px;
+    background-color: white;
+    border-radius: 13px;
+    border: 0px solid;
+    padding: 2.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15%;
+}
+
+.client-gateway-left h2 {
+    font-weight: 600;
+}

@@ -40,7 +40,7 @@ import './theme/variables.css';
 import Splash from './pages/Splash';
 import Welcome from './pages/Welcome';
 import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
+import SignUp from './pages/LawyersSignUp';
 import ForgotPassword from './pages/ForgotPassword';
 import Otp from './pages/Otp';
 import ResetPassword from './pages/ResetPassword';
@@ -50,6 +50,7 @@ import Security from './pages/Security';
 import Notification from './pages/Notification';
 import Availability from './pages/Availability';
 import AboutUs from './pages/AboutUs';
+import Decision from './pages/Decision';
 // import Tab from './components/Tab';
 
 setupIonicReact();
@@ -71,6 +72,10 @@ const App: React.FC = () => {
 
           <Route exact path="/welcome">
             <Welcome />
+          </Route>
+
+          <Route exact path="/decision">
+            <Decision />
           </Route>
 
           <Route exact path="/signin">
