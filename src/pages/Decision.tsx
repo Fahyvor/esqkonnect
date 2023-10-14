@@ -7,11 +7,11 @@ const Decision: React.FC = () => {
     const history = useHistory();
 
     const lawyerForm = () => {
-        history.push('/lawyersSignUp');
+        history.push('/lawyers-signup');
     }
 
     const clientForm = () => {
-        history.push('/clientsSignUp');
+        history.push('/clients-signup');
     }
   return (
     <IonPage>

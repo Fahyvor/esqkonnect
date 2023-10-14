@@ -24,7 +24,7 @@ const Welcome: React.FC = () => {
     const history = useHistory();
 
     const nextPage = () => {
-        history.push('/signin');
+        history.push('/decision');
     }
   return (
     <IonPage>

@@ -32,8 +32,13 @@
             } catch (error) {
                 console.log('User not registered', error)
             }
-            // console.log(signUpFormData);
         }
+        
+        // const [showPassword, setShowPassword] = useState('Hide Password');
+
+        // const togglePasswordVisibility = () => {
+        //     setShowPassword(!showPassword);
+        // };
     return (
         <IonPage>
             <IonContent fullscreen>
@@ -90,6 +95,9 @@
                     name='password'
                     ref={password}
                     required />
+                    {/* <button type="button" onClick={togglePasswordVisibility}>
+                    {showPassword ? 'Hide Password' : 'Show Password'}
+                    </button> */}
 
                     <input type='password'
                     placeholder='Confirm Password'
