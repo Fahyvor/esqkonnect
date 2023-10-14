@@ -77,10 +77,10 @@
 
                     <input
                     type='tel'
-                    placeholder='+234'
+                    placeholder='234'
                     name='phone'
                     ref={phone}
-                    pattern='[+]234[0-9]{10}'
+                    pattern='234[0-9]{10}'
                     required
                     />
 
