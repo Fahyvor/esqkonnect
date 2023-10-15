@@ -8,7 +8,7 @@ const ClientsSignUp:React.FC = () => {
     const first_name = useRef<HTMLInputElement>(null);
     const last_name = useRef<HTMLInputElement>(null);
     const email = useRef<HTMLInputElement>(null);
-    const phone = useRef();
+    const phone = useRef<HTMLInputElement>(null);
     const user_type = useRef<HTMLInputElement>(null);
     const password = useRef<HTMLInputElement>(null);
     const password_confirmation = useRef<HTMLInputElement>(null);
@@ -21,7 +21,7 @@ const ClientsSignUp:React.FC = () => {
             first_name: first_name.current?.value || '',
             last_name: last_name.current?.value || '',
             email: email.current?.value || '',
-            phone: parseInt(phone.current?.value || ''),
+            phone: parseInt(phone.current?.value || '0', 10),
             user_type: "Client",
             password: password.current?.value || '',
             password_confirmation: password_confirmation.current?.value || '',
@@ -77,10 +77,10 @@ return (
 
                 <input
                 type='tel'
-                placeholder='234'
+                placeholder='+234'
                 name='phone'
                 ref={phone}
-                pattern='234[0-9]{10}'
+                pattern='[+]234[0-9]{10}'
                 required
                 />
 

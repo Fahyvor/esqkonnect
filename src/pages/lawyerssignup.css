@@ -111,3 +111,7 @@
 .signup-container select {
     display: none;
 }
+
+.hide-input {
+    display: none;
+}

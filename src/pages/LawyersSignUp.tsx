@@ -2,13 +2,15 @@
     import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
     import './lawyerssignup.css'
     import Claps from '../assets/Claps.png'
+    import axios from 'axios';
+    import { API_URL } from '../apiConfig';
 
     const LawyersSignUp:React.FC = () => {
 
         const first_name = useRef<HTMLInputElement>(null);
         const last_name = useRef<HTMLInputElement>(null);
         const email = useRef<HTMLInputElement>(null);
-        const phone = useRef();
+        const phone = useRef<HTMLInputElement>();
         const user_type = useRef<HTMLInputElement>(null);
         const password = useRef<HTMLInputElement>(null);
         const password_confirmation = useRef<HTMLInputElement>(null);
@@ -16,23 +18,32 @@
 
         const handleSignUpSubmit = async (e: FormEvent) => {
             e.preventDefault();
-            
-            const newUser = {
-                first_name: first_name.current?.value || '',
-                last_name: last_name.current?.value || '',
-                email: email.current?.value || '',
-                phone: parseInt(phone.current?.value || ''),
-                user_type: "Lawyer",
-                password: password.current?.value || '',
-                password_confirmation: password_confirmation.current?.value || '',
+          
+            const data = {
+              first_name: first_name.current?.value || '',
+              last_name: last_name.current?.value || '',
+              email: email.current?.value || '',
+              phone: phone.current?.value || '',
+              user_type: user_type.current?.value || 'Lawyer',
+              password: password.current?.value || '',
+              password_confirmation: password_confirmation.current?.value || '',
             };
-
+          
             try {
-                await console.log(newUser);
+              console.log('Request Data:', data);
+              const user = await axios.post(`${API_URL}/register`, data, {
+                headers: {
+                  Accept: 'application/vnd.api+json',
+                  'Content-Type': 'application/vnd.api+json',
+                },
+              });
+              console.log('User Created', user.data);
             } catch (error) {
-                console.log('User not registered', error)
+              console.log('User not registered', error);
+              console.log('Response Data:', error.response.data);
             }
-        }
+          };
+          
         
         // const [showPassword, setShowPassword] = useState('Hide Password');
 
@@ -77,24 +88,27 @@
 
                     <input
                     type='tel'
-                    placeholder='234'
+                    placeholder='+234'
                     name='phone'
                     ref={phone}
-                    pattern='234[0-9]{10}'
+                    // pattern='[+]234[0-9]{10}'
                     required
                     />
-
-
-                    <select id="user_type" name="user_type">
-                        <option value="lawyer">Lawyer</option>
-                        <option value="user">User</option>
-                    </select>
+             
+                    <input type='text'
+                    placeholder='user_type'
+                    name='user_type'
+                    ref={user_type}
+                    value="lawyer"
+                    className='hide-input'
+                    required />
 
                     <input type='password'
                     placeholder='password'
                     name='password'
                     ref={password}
                     required />
+                    
                     {/* <button type="button" onClick={togglePasswordVisibility}>
                     {showPassword ? 'Hide Password' : 'Show Password'}
                     </button> */}
