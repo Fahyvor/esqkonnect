@@ -1,10 +1,46 @@
-import React from 'react'
+import React, { FormEvent, useRef } from 'react'
 import { IonContent, IonPage } from '@ionic/react';
 import Claps from '../assets/Claps.png'
 import './signin.css'
+import axios from 'axios';
+import { API_URL } from '../apiConfig';
+import { useHistory } from 'react-router';
 
 
 const SignIn:React.FC = () => {
+
+  const history =  useHistory();
+
+  const email = useRef<HTMLInputElement>(null);
+  const password = useRef<HTMLInputElement>(null);
+
+  const handleSignInSubmit = async ( e: FormEvent ) => {
+      e.preventDefault();
+
+      const data = {
+        email : email.current?.value || '',
+        password: password.current?.value || ''
+      };
+
+      try {
+        // console.log('User LoggedIn', data);
+        const userLogin = await axios.post(`${API_URL}/login`, data, {
+          headers: {
+            Accept: 'application/vnd.api+json',
+            'Content-Type': 'application/vnd.api+json',
+          },
+        });
+        console.log('Login Successful', userLogin.data);
+
+        if( userLogin && userLogin.data.token) {
+          localStorage.setItem('token', userLogin.data.token);
+          history.push('/profile');
+        }
+      } catch (error) {
+        console.log('Login Unssuccessful', error);
+        console.log('Error Messgage', error.response.data)
+      }
+  }
   return (
     <IonPage>
       <IonContent>
@@ -18,13 +54,15 @@ const SignIn:React.FC = () => {
             <p>welcome back</p>
           </div>
 
-          <form className='signin-form'>
+          <form className='signin-form' onSubmit={handleSignInSubmit}>
             <input type='email'
             placeholder='lawyer@gmail.com'
+            ref={email}
             required/>
 
             <input type='password'
             placeholder='password'
+            ref={password}
             required />
 
             <div className='forgot-password'>

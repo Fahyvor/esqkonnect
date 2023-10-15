@@ -5,6 +5,10 @@ import Upload from '../assets/upload.png'
 // import Tab from "../components/Tab"
 
 const Profile:React.FC = () => {
+
+    const handleLogout = () => {
+        // console.log('Hello World')
+    }
   return (
     <IonPage>
         <IonHeader>
@@ -94,7 +98,7 @@ const Profile:React.FC = () => {
                             </div>
                         </div>
 
-                        <div className="more-cards">
+                        <div className="more-cards" onClick={handleLogout}>
                             <div className="more-cards-left">
                                 <h4>Logout</h4>
                             </div>

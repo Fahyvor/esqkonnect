@@ -51,7 +51,7 @@ import Notification from './pages/Notification';
 import Availability from './pages/Availability';
 import AboutUs from './pages/AboutUs';
 import Decision from './pages/Decision';
-import ClientsSignUp from './pages/ClientsSignUp';
+import UsersSignUp from './pages/UsersSignUp';
 // import Tab from './components/Tab';
 
 setupIonicReact();
@@ -87,8 +87,8 @@ const App: React.FC = () => {
             <LawyersSignUp />
           </Route>
 
-          <Route exact path="/clients-signup">
-            <ClientsSignUp />
+          <Route exact path="/users-signup">
+            <UsersSignUp />
           </Route>
 
           <Route exact path="/forget-password">

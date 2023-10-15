@@ -1,14 +1,14 @@
     import React, { useState, ChangeEvent, FormEvent, useRef } from 'react'
     import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-    import './lawyerssignup.css'
+    import './userssignup.css'
     import Claps from '../assets/Claps.png'
     import axios from 'axios';
     import { API_URL } from '../apiConfig';
     import { useHistory } from 'react-router';
 
-    const LawyersSignUp:React.FC = () => {
+    const ClientsSignUp:React.FC = () => {
 
-      const history = useHistory();
+        const history = useHistory();
 
         const first_name = useRef<HTMLInputElement>(null);
         const last_name = useRef<HTMLInputElement>(null);
@@ -21,42 +21,42 @@
 
         const handleSignUpSubmit = async (e: FormEvent) => {
             e.preventDefault();
-          
+        
             const data = {
-              first_name: first_name.current?.value || '',
-              last_name: last_name.current?.value || '',
-              email: email.current?.value || '',
-              phone: phone.current?.value || '',
-              user_type: user_type.current?.value || 'lawyer',
-              password: password.current?.value || '',
-              password_confirmation: password_confirmation.current?.value || '',
+            first_name: first_name.current?.value || '',
+            last_name: last_name.current?.value || '',
+            email: email.current?.value || '',
+            phone: phone.current?.value || '',
+            user_type: user_type.current?.value || 'user',
+            password: password.current?.value || '',
+            password_confirmation: password_confirmation.current?.value || '',
             };
-          
+        
             try {
-              // console.log('Request Data:', data);
-              const user = await axios.post(`${API_URL}/register`, data, {
+            console.log('Request Data:', data);
+            const user = await axios.post(`${API_URL}/register`, data, {
                 headers: {
-                  Accept: 'application/vnd.api+json',
-                  'Content-Type': 'application/vnd.api+json',
+                Accept: 'application/vnd.api+json',
+                'Content-Type': 'application/vnd.api+json',
                 },
-              });
-              console.log('User Created', user.data);
+            });
+            console.log('User Created', user.data);
 
-              if (first_name.current) first_name.current.value = '';
-              if (last_name.current) last_name.current.value = '';
-              if (email.current) email.current.value = '';
-              if (phone.current) phone.current.value = '';
-              if (user_type.current) user_type.current.value = '';
-              if (password.current) password.current.value = '';
-              if (password_confirmation.current) password_confirmation.current.value = '';
-
-              history.push('/signin')
+            if (first_name.current) first_name.current.value = '';
+            if (last_name.current) last_name.current.value = '';
+            if (email.current) email.current.value = '';
+            if (phone.current) phone.current.value = '';
+            if (user_type.current) user_type.current.value = '';
+            if (password.current) password.current.value = '';
+            if (password_confirmation.current) password_confirmation.current.value = '';
+            
+            history.push('/signin');
             } catch (error) {
-              console.log('User not registered', error);
-              console.log('Response Data:', error.response.data);
+            console.log('User not registered', error);
+            console.log('Response Data:', error.response.data);
             }
-          };
-          
+        };
+        
         
         // const [showPassword, setShowPassword] = useState('Hide Password');
 
@@ -107,12 +107,12 @@
                     // pattern='[+]234[0-9]{10}'
                     required
                     />
-             
+            
                     <input type='text'
                     placeholder='user_type'
                     name='user_type'
                     ref={user_type}
-                    value="lawyer"
+                    value="user"
                     className='hide-input'
                     required />
 
@@ -164,4 +164,4 @@
     )
     }
 
-    export default LawyersSignUp
+    export default ClientsSignUp

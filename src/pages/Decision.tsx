@@ -11,7 +11,7 @@ const Decision: React.FC = () => {
     }
 
     const clientForm = () => {
-        history.push('/clients-signup');
+        history.push('/users-signup');
     }
   return (
     <IonPage>
