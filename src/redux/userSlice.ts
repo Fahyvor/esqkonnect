@@ -9,7 +9,9 @@ interface User {
   user_type: string | null;
 }
 
-const user: User | null = JSON.parse(localStorage.getItem('user'));
+const storedUserData = localStorage.getItem('user');
+const user: User | null = storedUserData ? JSON.parse(storedUserData) : null;
+
 
 const initialState: User = user || {
   email: null,

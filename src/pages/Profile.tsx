@@ -2,21 +2,13 @@ import { IonContent, IonHeader, IonIcon, IonLabel, IonPage, IonTab, IonTabs, Ion
 import './profile.css'
 import { chevronForward, square } from "ionicons/icons"
 import Upload from '../assets/upload.png'
-// import Tab from "../components/Tab"
 import axios from "axios"
 import { API_URL } from "../apiConfig"
 import { useEffect, useState } from "react"
 import { useSelector, useDispatch } from 'react-redux';
 import { setUserData } from "../redux/userSlice"
 
-
 const Profile:React.FC = () => {
-
-    // const [user, setUser] = useState({
-    //     first_name: '',
-    //     last_name: '',
-    //     email: ''
-    // })
 
     const userData = useSelector(setUserData);
 
@@ -50,6 +42,9 @@ const Profile:React.FC = () => {
     //         });
     // }, []);
 
+    const first_name  = userData.payload.user.data.user.first_name
+    const last_name  = userData.payload.user.data.user.last_name
+    const email  = userData.payload.user.data.user.email
   return (
     <IonPage>
         <IonHeader>
@@ -68,8 +63,8 @@ const Profile:React.FC = () => {
                     </div>
 
                     <div className="profile-name">
-                        <h4>marley.botosh@gmail.com</h4>
-                        <h3>{userData?.data?.user?.first_name} {userData?.data?.user?.last_name}</h3>
+                        <h4>{email}</h4>
+                        <h3>{first_name} {last_name}</h3>
                     </div>
                 </div>
 

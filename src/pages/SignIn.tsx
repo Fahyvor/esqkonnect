@@ -41,7 +41,7 @@ const SignIn:React.FC = () => {
         const storedUser = localStorage.setItem('user', JSON.stringify(userLogin.data))
 
         dispatch(setUserData(userLogin.data));
-        console.log('User details', userLogin.data.user);
+        console.log('User details', dispatch(setUserData(userLogin.data)));
         
         if (email.current) email.current.value = '';
         if (password.current) password.current.value = '';
