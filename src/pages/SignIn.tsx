@@ -5,14 +5,21 @@ import './signin.css'
 import axios from 'axios';
 import { API_URL } from '../apiConfig';
 import { useHistory } from 'react-router';
-
+import { useDispatch } from 'react-redux';
+import { setUserData } from '../redux/userSlice';
 
 const SignIn:React.FC = () => {
 
   const history =  useHistory();
+  const dispatch = useDispatch();
 
   const email = useRef<HTMLInputElement>(null);
   const password = useRef<HTMLInputElement>(null);
+
+  // const setCookie = (name, value, days) => {
+  //   const expires = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toUTCString();
+  //   document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+  // };
 
   const handleSignInSubmit = async ( e: FormEvent ) => {
       e.preventDefault();
@@ -32,8 +39,16 @@ const SignIn:React.FC = () => {
         });
         console.log('Login Successful', userLogin.data);
 
+        if (email.current) email.current.value = '';
+        if (password.current) password.current.value = '';
+
         if( userLogin && userLogin.data.token) {
-          localStorage.setItem('token', userLogin.data.token);
+          // localStorage.setItem('token', userLogin.data);
+          // setCookie('token', userLogin.data, 30);
+          const userData = userLogin.data.user;
+          console.log('Dispatching Data:', userData);
+          dispatch(setUserData(userData));
+          console.log('Dispatched Data:', userData);
           history.push('/profile');
         }
       } catch (error) {
@@ -56,12 +71,14 @@ const SignIn:React.FC = () => {
 
           <form className='signin-form' onSubmit={handleSignInSubmit}>
             <input type='email'
-            placeholder='lawyer@gmail.com'
+            placeholder='emailaddress@email.com'
+            name='email'
             ref={email}
             required/>
 
             <input type='password'
             placeholder='password'
+            name='password'
             ref={password}
             required />
 

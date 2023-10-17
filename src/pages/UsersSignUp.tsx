@@ -51,6 +51,7 @@
             if (password_confirmation.current) password_confirmation.current.value = '';
             
             history.push('/signin');
+            
             } catch (error) {
             console.log('User not registered', error);
             console.log('Response Data:', error.response.data);
