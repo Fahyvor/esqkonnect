@@ -38,19 +38,24 @@ const SignIn:React.FC = () => {
           },
         });
         console.log('Login Successful', userLogin.data);
+        const storedUser = localStorage.setItem('user', JSON.stringify(userLogin.data))
 
+        dispatch(setUserData(userLogin.data));
+        console.log('User details', userLogin.data.user);
+        
         if (email.current) email.current.value = '';
         if (password.current) password.current.value = '';
 
-        if( userLogin && userLogin.data.token) {
-          // localStorage.setItem('token', userLogin.data);
-          // setCookie('token', userLogin.data, 30);
-          const userData = userLogin.data.user;
-          console.log('Dispatching Data:', userData);
-          dispatch(setUserData(userData));
-          console.log('Dispatched Data:', userData);
-          history.push('/profile');
-        }
+        // if( userLogin && userLogin.data.token) {
+        //   const userData = userLogin.data;
+        //   console.log(userData)
+        //   dispatch(setUserData(userData));
+        //   console.log('Dispatched Data', userData);
+        //   localStorage.setItem('user', JSON.stringify(userData.data))
+        //   const storedUser = JSON.parse(localStorage.getItem('user') || 'null');
+        //   console.log(storedUser);
+        //   history.push('/profile');
+        // }
       } catch (error) {
         console.log('Login Unssuccessful', error);
         console.log('Error Messgage', error.response.data)

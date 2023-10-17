@@ -20,16 +20,14 @@ const Profile:React.FC = () => {
 
     const userData = useSelector(setUserData);
 
-    // const token = localStorage.getItem('jwtToken');
-
     const handleLogout = () => {
         // console.log('Hello World')
     }
 
-    const user = {
-        first_name: userData ? userData.first_name : '',
-        last_name: userData ? userData.last_name : '',
-    };
+    // const user = {
+    //     first_name: userData ? userData.first_name : '',
+    //     last_name: userData ? userData.last_name : '',
+    // };
 
     // useEffect(() => {
     //     axios.get(`${API_URL}/profile`, {
@@ -52,21 +50,6 @@ const Profile:React.FC = () => {
     //         });
     // }, []);
 
-    useEffect(() => {
-        // Your API call logic here, use userData if needed
-        axios.get(`${API_URL}/profile`, {
-          headers: {
-            Authorization: `Bearer ${userData.token}`,
-          }
-        })
-          .then((response) => {
-            console.log('API Response data', response.data);
-          })
-          .catch((error) => {
-            console.log('Error fetching data', error);
-            console.log('Error message', error.message);
-          });
-      }, [userData]);
   return (
     <IonPage>
         <IonHeader>
@@ -86,7 +69,7 @@ const Profile:React.FC = () => {
 
                     <div className="profile-name">
                         <h4>marley.botosh@gmail.com</h4>
-                        <h3>{userData.first_name} {userData.last_name}</h3>
+                        <h3>{userData?.data?.user?.first_name} {userData?.data?.user?.last_name}</h3>
                     </div>
                 </div>
 
