@@ -42,6 +42,7 @@ const SignIn:React.FC = () => {
 
         dispatch(setUserData(userLogin.data));
         console.log('User details', dispatch(setUserData(userLogin.data)));
+        history.push('/profile')
         
         if (email.current) email.current.value = '';
         if (password.current) password.current.value = '';
@@ -99,7 +100,7 @@ const SignIn:React.FC = () => {
 
           <div className='account-signup'>
             <h4>Don't have account? 
-              <a href='/signup'>Sign Up</a>
+              <a href='/decision'>Sign Up</a>
             </h4>
           </div>
         </div>

@@ -1,12 +1,20 @@
 import React, { useState } from 'react'
-import { IonContent, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonIcon, IonPage, IonTitle, IonHeader, IonToolbar } from '@ionic/react';
 import './resetpassword.css'
 import { remove, arrowBack } from 'ionicons/icons';
 import Message from '../assets/message.png'
+import { useHistory } from 'react-router';
 
 const ResetPassword:React.FC = () => {
     const resetPassword3 = (e) => {
         e.preventDefault();
+    }
+
+    const history = useHistory();
+
+    const previousPage = () => {
+        history.goBack();
+        console.log('Back');
     }
 
     const [passwordReset, setPasswordReset] = useState(false)
@@ -40,8 +48,8 @@ const ResetPassword:React.FC = () => {
         </IonHeader> */}
         <IonContent>
             <div
-            className='Reset_password_container'>
-                <div className='back-button'>
+            className='reset_password_container'>
+                <div className='back-button' onClick={previousPage}>
                     <IonIcon icon={arrowBack}></IonIcon>
                 </div>
 

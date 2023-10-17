@@ -45,6 +45,8 @@ const Profile:React.FC = () => {
     const first_name  = userData.payload.user.data.user.first_name
     const last_name  = userData.payload.user.data.user.last_name
     const email  = userData.payload.user.data.user.email
+
+    const defaultDetails = "User"
   return (
     <IonPage>
         <IonHeader>
@@ -63,8 +65,8 @@ const Profile:React.FC = () => {
                     </div>
 
                     <div className="profile-name">
-                        <h4>{email}</h4>
-                        <h3>{first_name} {last_name}</h3>
+                        <h4>{email ? email : defaultDetails}</h4>
+                        <h3>{first_name ? first_name : defaultDetails} { last_name ? last_name : defaultDetails}</h3>
                     </div>
                 </div>
 
