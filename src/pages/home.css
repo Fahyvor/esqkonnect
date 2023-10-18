@@ -51,3 +51,60 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.lawyers-containers {
+    display: flex;
+    gap: 4%;
+    align-items: center;
+    width: 47%;
+    background: rgba(153, 153, 153, 0.2);
+    border-radius: 6px;
+    padding: 2%;
+}
+
+.top-lawyers {
+    display: flex;
+    gap: 5%;
+    margin-top: 4%;
+    padding-bottom: 7%;
+}
+
+.lawyers-image {
+    width: 100%;
+}
+
+.lawyers-image {
+    width: 100%;
+}
+
+.lawyers-details {
+    width: 100%;
+    margin-top: -6%;
+}
+
+.lawyers-details p {
+    font-size: 0.6rem;
+    margin-top: -7%;
+}
+
+.services-offered {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3%;
+}
+
+.service-offered {
+    background: rgba(241, 242, 248, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.service-offered h2 {
+    color: rgba(59, 64, 84, 1);
+    width: 100%;
+    text-align: center;
+    padding: 10%;
+    font-weight: 900;
+}

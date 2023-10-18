@@ -64,8 +64,9 @@ const Home:React.FC = () => {
                                 </div>
 
                                 <div className='lawyers-details'>
-                                    <h6>Family Lawyer</h6>
-                                    <h6>Tax Lawyer</h6>
+                                    <h6>Rako</h6>
+                                    <p>Family Lawyer</p>
+                                    <p>Tax Lawyer</p>
                                 </div>
                             </div>
 
@@ -75,8 +76,9 @@ const Home:React.FC = () => {
                                 </div>
 
                                 <div className='lawyers-details'>
-                                    <h6>Criminal Lawyer</h6>
-                                    <h6>Tax Lawyer</h6>
+                                    <h6>Surendra</h6>
+                                    <p>Criminal Lawyer</p>
+                                    <p>Tax Lawyer</p>
                                 </div>
                             </div>
                         </div>
