@@ -3,10 +3,17 @@ import { IonContent, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/react
 import './otp.css'
 import { remove, arrowBack } from 'ionicons/icons';
 import Message from '../assets/message.png'
+import { useHistory } from 'react-router';
 
 const Otp:React.FC = () => {
     const resetPassword2 = (e) => {
         e.preventDefault();
+    }
+
+    const history = useHistory()
+
+    const previousPage = () => {
+        history.goBack()
     }
 
     const [passwordReset, setPasswordReset] = useState(false)
@@ -14,18 +21,21 @@ const Otp:React.FC = () => {
     const [mainReset, setMainReset] = useState(false)
 
     const showPage1 = () => {
+        history.push('/forget-password')
         setPasswordReset(true);
         setOtp(false);
         setMainReset(false);
     }
 
     const showPage2 = () => {
+        history.push('/otp')
         setOtp(true);
         setPasswordReset(false);
-        setMainReset(false)
+        setMainReset(false);
     }
 
     const showPage3 = () => {
+        history.push('/reset-password')
         setMainReset(true);
         setPasswordReset(false);
         setOtp(false);
@@ -41,7 +51,7 @@ const Otp:React.FC = () => {
         <IonContent>
             <div
             className='otp_container'>
-                <div className='back-button'>
+                <div className='back-button' onClick={previousPage}>
                     <IonIcon icon={arrowBack}></IonIcon>
                 </div>
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { IonContent, IonIcon, IonPage, IonTitle, IonHeader, IonToolbar } from '@ionic/react';
 import './resetpassword.css'
 import { remove, arrowBack } from 'ionicons/icons';
-import Message from '../assets/message.png'
+import Lock from '../assets/lock.png'
 import { useHistory } from 'react-router';
 
 const ResetPassword:React.FC = () => {
@@ -22,18 +22,21 @@ const ResetPassword:React.FC = () => {
     const [mainReset, setMainReset] = useState(true)
 
     const showPage1 = () => {
+        history.push('/forget-password')
         setPasswordReset(true);
         setOtp(false);
         setMainReset(false);
     }
 
     const showPage2 = () => {
+        history.push('/otp')
         setOtp(true);
         setPasswordReset(false);
         setMainReset(false)
     }
 
     const showPage3 = () => {
+        history.push('/reset-password');
         setMainReset(true);
         setPasswordReset(false);
         setOtp(false);
@@ -69,7 +72,7 @@ const ResetPassword:React.FC = () => {
                 </div>
 
                 <div className='message-container'>
-                    <img src={Message} />
+                    <img src={Lock} />
                 </div>
 
                 <div className='msg-text-container'>

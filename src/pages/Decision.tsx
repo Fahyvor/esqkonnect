@@ -17,20 +17,23 @@ const Decision: React.FC = () => {
     <IonPage>
         <IonContent>
             <div className='decision-container'>
+                <div className='decision-header'>
+                    <h1>What would you like to do?</h1>
+                </div>
                 <div className='lawyer-gateway' onClick={lawyerForm}>
                     <div className='lawyer-gateway-left'>
-                        <h2>Provide Legal Solutions</h2>
-                        <p>Request to work for a Client</p>
+                        <h2>Offer Legal Service</h2>
+                        {/* <p>Request to work for a Client</p> */}
                     </div>
-                    <IonIcon icon={chevronForward} />
+                    {/* <IonIcon icon={chevronForward} /> */}
                 </div>
 
                 <div className='client-gateway' onClick={clientForm}>
                     <div className='client-gateway-left'>
-                        <h2>Need Legal Solutions?</h2>
-                        <p>Hire a Lawyer</p>
+                        <h2>Hire a Lawyer</h2>
+                        {/* <p>Hire a Lawyer</p> */}
                     </div>
-                    <IonIcon icon={chevronForward} />
+                    {/* <IonIcon icon={chevronForward} /> */}
                 </div>
             </div>
         </IonContent>

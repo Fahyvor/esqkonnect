@@ -21,24 +21,24 @@ const ForgotPassword:React.FC = () => {
     const [mainReset, setMainReset] = useState(false)
 
     const showPage1 = () => {
+        history.push('/forget-password')
         setPasswordReset(true);
         setOtp(false);
         setMainReset(false);
-        history.push('/forget-password')
     }
 
     const showPage2 = () => {
+        history.push('/otp')
         setOtp(true);
         setPasswordReset(false);
         setMainReset(false)
-        history.push('/otp')
     }
 
     const showPage3 = () => {
+        history.push('/reset-password')
         setMainReset(true);
         setPasswordReset(false);
         setOtp(false);
-        history.push('/reset-password')
     }
 
   return (

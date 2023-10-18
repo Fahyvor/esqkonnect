@@ -5,10 +5,17 @@
     flex-direction: column;
 }
 
+.decision-header h1 {
+    font-size: 2.7rem;
+    padding-bottom: 15%;
+    font-weight: 900;
+    text-align: center;
+}
+
 .lawyer-gateway {
     box-shadow: 0px 0px 0px 2px;
-    background-color: white;
-    border-radius: 13px;
+    background-color: black;
+    color: white;
     border: 0px solid;
     padding: 2.5%;
     display: flex;
@@ -22,8 +29,8 @@
 
 .client-gateway {
     box-shadow: 0px 0px 0px 2px;
-    background-color: white;
-    border-radius: 13px;
+    background-color: black;
+    color: white;
     border: 0px solid;
     padding: 2.5%;
     display: flex;
