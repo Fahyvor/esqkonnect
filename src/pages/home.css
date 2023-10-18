@@ -1,0 +1,53 @@
+.home-container {
+    padding: 5%;
+}
+
+.home-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* .home-left {
+    text-align: center;
+} */
+
+.home-left h3 {
+    color: rgba(97, 103, 125, 1);
+}
+
+.home-left h1 {
+    font-weight: 800;
+    margin-top: -5%;
+}
+
+.lawyers-categories {
+    margin-top: 15%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 3%;
+}
+
+.categories-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(241, 242, 248, 1);
+    border-radius: 5px;
+    padding: 2%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+.top-lawyers-container {
+    margin-top: 20%;
+}
+
+.top-lawyers-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
