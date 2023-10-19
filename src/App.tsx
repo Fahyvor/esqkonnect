@@ -53,6 +53,7 @@ import AboutUs from './pages/AboutUs';
 import Decision from './pages/Decision';
 import UsersSignUp from './pages/UsersSignUp';
 import Home from './pages/Home';
+import Search from './pages/Search';
 // import Tab from './components/Tab';
 
 setupIonicReact();
@@ -130,6 +131,10 @@ const App: React.FC = () => {
 
           <Route exact path="/home">
             <Home />
+          </Route>
+
+          <Route exact path="/search">
+            <Search />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">

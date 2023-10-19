@@ -1,0 +1,75 @@
+.ion-title {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.icon-container ion-icon {
+    position: absolute;
+    margin-top: -2% !important;
+}
+
+.exp-and-country {
+    display: flex;
+    padding: 4% 4% 1% 3%;
+    justify-content: space-between;
+}
+
+.exp-level {
+    background: rgba(241, 242, 248, 1);
+    padding: 1%;
+    width: 45%;
+    text-align: center;
+}
+
+.country {
+    background: rgba(241, 242, 248, 1);
+    padding: 1%;
+    width: 45%;
+    text-align: center;
+}
+
+.areas {
+    background: rgba(241, 242, 248, 1);
+    padding: 1%;
+    text-align: center;
+    margin: 4%;
+}
+
+.lawyers-list {
+    display: flex;
+    gap: 3%;
+    padding: 4% 0% 0% 4%;
+    width: 100%;
+}
+
+.lawyer-image {
+    height: 100px;
+}
+
+.lawyer-image img{
+    height: 100%;
+}
+
+.lawyers-list h5 {
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.lawyers-list p {
+    font-size: 0.7rem;
+}
+
+.location {
+    text-align: center;
+    width: 25%;
+}
+
+.view-button {
+    margin-top: 6%;
+    background-color: black;
+    color: white;
+    padding: 0% 0.5% 0.5% 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
