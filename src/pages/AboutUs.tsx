@@ -2,15 +2,22 @@ import React from 'react'
 import { IonContent, IonHeader, IonIcon, IonLabel, IonPage, IonTab, IonTabButton, IonTitle, IonToolbar } from "@ionic/react"
 import { arrowBack } from 'ionicons/icons'
 import './aboutus.css'
+import { useHistory } from 'react-router'
 
 const AboutUs:React.FC = () => {
+
+    const history = useHistory();
+
+    const previousPage = () => {
+        history.goBack()
+    }
     
   return (
     <IonPage>
         <IonHeader>
             <IonToolbar>
                 <div className='header-container'>
-                <IonIcon icon={arrowBack}></IonIcon>
+                <IonIcon icon={arrowBack} onClick={previousPage}></IonIcon>
                 <IonTitle>About Us</IonTitle>
                 </div>
             </IonToolbar>

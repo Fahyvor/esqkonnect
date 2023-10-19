@@ -2,10 +2,17 @@ import React from 'react'
 import { IonContent, IonHeader, IonIcon, IonLabel, IonPage, IonTab, IonTabButton, IonTitle, IonToolbar } from "@ionic/react"
 import { arrowBack } from 'ionicons/icons'
 import './notification.css'
+import { useHistory } from 'react-router'
 
 const Notification:React.FC = () => {
     const updatePassword = (e) => {
         e.preventDefault();
+    }
+
+    const history = useHistory();
+
+    const previousPage = () => {
+        history.goBack();
     }
     
   return (
@@ -13,7 +20,7 @@ const Notification:React.FC = () => {
         <IonHeader>
             <IonToolbar>
                 <div className='header-container'>
-                <IonIcon icon={arrowBack}></IonIcon>
+                <IonIcon icon={arrowBack} onClick={previousPage}></IonIcon>
                 <IonTitle>Notification</IonTitle>
                 </div>
             </IonToolbar>

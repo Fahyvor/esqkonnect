@@ -3,10 +3,17 @@ import { IonContent, IonHeader, IonIcon, IonLabel, IonPage, IonTab, IonTabButton
 import UploadAccount from '../assets/uploadAccount.png'
 import { arrowBack } from 'ionicons/icons'
 import './account.css'
+import { useHistory } from 'react-router'
 
 const Account:React.FC = () => {
     const updateProfile = (e) => {
         e.preventDefault();
+    }
+
+    const history = useHistory();
+
+    const PreviousPage = () => {
+        history.goBack();
     }
     
   return (
@@ -14,7 +21,7 @@ const Account:React.FC = () => {
         <IonHeader>
             <IonToolbar>
                 <div className='header-container'>
-                <IonIcon icon={arrowBack}></IonIcon>
+                <IonIcon icon={arrowBack} onClick={PreviousPage}></IonIcon>
                 <IonTitle>Account</IonTitle>
                 </div>
             </IonToolbar>

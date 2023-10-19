@@ -7,10 +7,13 @@ import { API_URL } from "../apiConfig"
 import { useEffect, useState } from "react"
 import { useSelector, useDispatch } from 'react-redux';
 import { setUserData } from "../redux/userSlice"
+import { useHistory } from "react-router"
 
 const Profile:React.FC = () => {
 
     const userData = useSelector(setUserData);
+
+    const history = useHistory();
 
     const handleLogout = () => {
         // console.log('Hello World')
@@ -47,6 +50,26 @@ const Profile:React.FC = () => {
     const email  = userData.payload.user.data.user.email
 
     const defaultDetails = "User"
+
+    const goToAbout = () => {
+        history.push('/about-us')
+    }
+
+    const goToAccount = () => {
+        history.push('/account')
+    }
+
+    const goToSecurity = () => {
+        history.push('/security')
+    }
+
+    const goToNotifications = () => {
+        history.push('/notification')
+    }
+
+    const goToAvailability = () => {
+        history.push('/availability')
+    }
   return (
     <IonPage>
         <IonHeader>
@@ -74,7 +97,7 @@ const Profile:React.FC = () => {
                     <h2>Personal details</h2>
 
                     <div className="full-details">
-                        <div className="profile-cards">
+                        <div className="profile-cards" onClick={goToAccount}>
                             <div className="cards-left">
                                 <h3>Account</h3>
                                 <p>Manage your name, email and password.</p>
@@ -86,7 +109,7 @@ const Profile:React.FC = () => {
                         </div>
                         <hr />
 
-                        <div className="profile-cards">
+                        <div className="profile-cards" onClick={goToSecurity}>
                             <div className="cards-left">
                                 <h3>Security</h3>
                                 <p>Manage your password here</p>
@@ -97,7 +120,7 @@ const Profile:React.FC = () => {
                             </div>
                         </div>
 
-                        <div className="profile-cards">
+                        <div className="profile-cards" onClick={goToNotifications}>
                             <div className="cards-left">
                                 <h3>Notifications</h3>
                                 <p>View your notifications here</p>
@@ -108,7 +131,7 @@ const Profile:React.FC = () => {
                             </div>
                         </div>
 
-                        <div className="profile-cards">
+                        <div className="profile-cards" onClick={goToAvailability}>
                             <div className="cards-left">
                                 <h3>Availability</h3>
                                 <p>Set your availability status here</p>
@@ -126,7 +149,7 @@ const Profile:React.FC = () => {
                     <h2>More</h2>
 
                     <div className="more-containers">
-                        <div className="more-cards">
+                        <div className="more-cards" onClick={goToAbout}>
                             <div className="more-cards-left">
                                 <h4>About us</h4>
                             </div>

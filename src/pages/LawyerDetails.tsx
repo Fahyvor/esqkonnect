@@ -16,9 +16,7 @@ const LawyerDetails = () => {
 
     const [showExpertise, setShowExpertise] = useState(true);
     const [showReview, setShowReview] = useState(false);
-    const [isActive, setActive] = useState({
-        activeClass: null,
-    });
+    const [isActive, setActive] = useState('expertise');
 
 
     const showReviewSection = () => {
