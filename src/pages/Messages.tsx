@@ -12,6 +12,10 @@ const Messages = () => {
     const previousPage = () => {
         history.goBack();
     }
+
+    const chatSpace = () => {
+        history.push('/chat')
+    }
   return (
     <IonPage>
         <IonHeader>
@@ -23,7 +27,7 @@ const Messages = () => {
             </IonToolbar>
         </IonHeader>
         <IonContent>
-            <div className='messages-container'>
+            <div className='messages-container' onClick={chatSpace}>
                 <div className='message'>
                     <div className='message-image'>
                         <img src={MessageImage} />

@@ -1,0 +1,55 @@
+.sender-chat {
+    width: 100%;
+    padding: 0% 6% 0% 6%;
+}
+
+.sender-chat p {
+    color: white;
+    width: 40%;
+    background-color: rgba(124, 139, 160, 1);
+    padding: 2%;
+    border-radius: 8px;
+}
+
+.receivers-chat {
+    display: flex;
+    text-align: right;
+    justify-content: end;
+    padding: 0% 6% 0% 6%;
+}
+
+.receivers-chat p {
+    background: rgba(246, 250, 252, 1);
+    width: 40%;
+    padding: 2%;
+    border-radius: 8px;
+}
+
+.send-and-input {
+    position: fixed !important;
+    z-index: +1;
+    background-color: black;
+}
+
+.message-input {
+    display: flex !important;
+    gap: 3%;
+    padding: 2% 6% 2% 6%;
+    width: 95%;
+    margin: 3%;
+    border-radius: 10px;
+    position: fixed;
+    z-index: +1;
+    margin-top: 540px;
+    background-color: rgba(236, 239, 240, 1);
+}
+
+.message-input input {
+    background-color: rgba(236, 239, 240, 1);
+    border: 0px solid;
+    width: 80%;
+}
+
+.message-input ion-icon {
+    color: rgba(136, 136, 136, 1);
+}

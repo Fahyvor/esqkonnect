@@ -56,6 +56,7 @@ import Home from './pages/Home';
 import Search from './pages/Search';
 import LawyerDetails from './pages/LawyerDetails';
 import Messages from './pages/Messages';
+import Chat from './pages/Chat'
 // import Tab from './components/Tab';
 
 setupIonicReact();
@@ -145,6 +146,10 @@ const App: React.FC = () => {
 
           <Route exact path="/messages">
             <Messages />
+          </Route>
+
+          <Route exact path="/chat">
+            <Chat />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
