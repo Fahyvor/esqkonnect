@@ -12,11 +12,15 @@ const Search = () => {
     const previousPage = () => {
         history.goBack();
     }
+
+    const lawyersFullDetails = () => {
+        history.push('/lawyers-full-details')
+    }
   return (
     <IonPage>
         <IonToolbar>
-            <div className='icon-container' onClick={previousPage}>
-            <IonIcon icon={chevronBack}></IonIcon>
+            <div className='icon-container' >
+            <IonIcon icon={chevronBack} onClick={previousPage}></IonIcon>
             </div>
             <IonTitle>
                 Search Lawyer
@@ -61,7 +65,7 @@ const Search = () => {
                         <h5>Location</h5>
                         <p>NGN</p>
 
-                        <div className='view-button'>
+                        <div className='view-button' onClick={lawyersFullDetails}>
                             <h6>View</h6>
                         </div>
                     </div>
