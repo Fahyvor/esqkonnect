@@ -55,6 +55,7 @@ import UsersSignUp from './pages/UsersSignUp';
 import Home from './pages/Home';
 import Search from './pages/Search';
 import LawyerDetails from './pages/LawyerDetails';
+import Messages from './pages/Messages';
 // import Tab from './components/Tab';
 
 setupIonicReact();
@@ -141,11 +142,15 @@ const App: React.FC = () => {
           <Route exact path="/lawyers-full-details">
             <LawyerDetails />
           </Route>
+
+          <Route exact path="/messages">
+            <Messages />
+          </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-              <IonTabButton tab="/" href="/"
-              className={activeTab === '/' ? 'active' : ''}
-              onClick={() => setActiveTab('/')}
+              <IonTabButton tab="/home" href="/home"
+              className={activeTab === '/home' ? 'active' : ''}
+              onClick={() => setActiveTab('/home')}
               >
                   <IonIcon icon={homeOutline} />
                   <IonLabel>Home</IonLabel>

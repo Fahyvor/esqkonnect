@@ -1,0 +1,33 @@
+.message {
+    display: flex;
+    padding: 3% 5% 2% 5%;
+    align-items: center;
+    gap: 3%;
+}
+
+.message-image {
+    width: 40%;
+}
+
+.name-and-message {
+    font-size: 0.8rem;
+}
+
+.name-and-message h4 {
+    font-weight: 900;
+}
+
+.number-of-messages {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.number-of-messages p {
+    background: rgba(117, 177, 206, 1);
+    color: white;
+    border-radius: 50%;
+    width: 38%;
+    height: 20%;
+    padding: 3%;
+}
