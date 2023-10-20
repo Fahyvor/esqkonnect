@@ -6,7 +6,7 @@ import axios from "axios"
 import { API_URL } from "../apiConfig"
 import { useEffect, useState } from "react"
 import { useSelector, useDispatch } from 'react-redux';
-import { setUserData } from "../redux/userSlice"
+import { setUserData, clearUserData } from "../redux/userSlice"
 import { useHistory } from "react-router"
 
 const Profile:React.FC = () => {
@@ -14,9 +14,37 @@ const Profile:React.FC = () => {
     const userData = useSelector(setUserData);
 
     const history = useHistory();
+    const dispatch = useDispatch();
 
-    const handleLogout = () => {
-        // console.log('Hello World')
+    const first_name  = userData.payload.user.data.user.first_name
+    const last_name  = userData.payload.user.data.user.last_name
+    const email  = userData.payload.user.data.user.email
+    const token = userData.payload.user.data.token
+    const user = userData.payload.user.data.user
+
+    const handleLogout = async () => {
+        console.log('Hello World')
+
+        const data = {
+            user: user,
+            token: token
+        }
+
+        try {
+            console.log(token);
+            const userLogout = await axios.post(`${API_URL}/logout`, data, {
+                headers: {
+                    Accept: 'application/vnd.api+json',
+                    'Content-Type': 'application/vnd.api+json',
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            dispatch(clearUserData());
+            history.push('/decision')
+        } catch (error) {
+            console.log('Error in Logging Out', error);
+            console.log('User Not logged Out', error.message)
+        }
     }
 
     // const user = {
@@ -44,10 +72,6 @@ const Profile:React.FC = () => {
     //             console.log('Error message', error.message);
     //         });
     // }, []);
-
-    const first_name  = userData.payload.user.data.user.first_name
-    const last_name  = userData.payload.user.data.user.last_name
-    const email  = userData.payload.user.data.user.email
 
     const defaultDetails = "User"
 

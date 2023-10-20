@@ -1,18 +1,47 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IonContent, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { useHistory } from 'react-router';
 import { chatbubblesOutline, chevronBack } from 'ionicons/icons';
 import './lawyersdetails.css'
 import LawyerDetailsImage from '../assets/lawyerDetailsImage.png'
 import Shanti from '../assets/shanti.png'
+import { API_URL } from '../apiConfig';
+import axios from 'axios';
 
 const LawyerDetails = () => {
+
+    interface Lawyer {
+        first_name: string,
+        last_name: string,
+        email: string,
+        phone_number: number,
+        user_type: string,
+        bio: string,
+    }
+
+    const [lawyersDetail, setLawyerDetail] = useState<Lawyer[]>([])
 
     const history = useHistory();
 
     const previousPage = () => {
         history.goBack();
     }
+
+    useEffect(() => {
+        axios.get(`${API_URL}/lawyers`, {
+            headers: {
+                Accept : 'application/vnd.api+json',
+            }
+        })
+        .then((response) => {
+            const lawyersArray: Lawyer[] = response.data.data.user;
+            const availableLawyers = lawyersArray.sort((p1, p2) => p1.id - p2.id);
+            setLawyerDetail(availableLawyers);
+        })
+        .catch((error) => {
+            console.log('Error in fetching Lawyer', error);
+        });
+    }, []);
 
     const [showExpertise, setShowExpertise] = useState(true);
     const [showReview, setShowReview] = useState(false);
