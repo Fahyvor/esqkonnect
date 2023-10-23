@@ -3,6 +3,7 @@ import { IonContent, IonHeader, IonIcon, IonLabel, IonPage, IonTab, IonTabButton
 import { arrowBack } from 'ionicons/icons'
 import './availability.css'
 import { useHistory } from 'react-router'
+import { toggleOutline } from 'ionicons/icons'
 
 const Availability:React.FC = () => {
     
@@ -13,6 +14,11 @@ const Availability:React.FC = () => {
     }
 
     const [userAvailable, setUserAvailable] = useState(false)
+    const [isActive, setActive] = useState('toggle-on')
+
+    const availabilityStatus = () => {
+        setUserAvailable(true);
+    }
   return (
     <IonPage>
         <IonHeader>
@@ -29,8 +35,8 @@ const Availability:React.FC = () => {
                     <h3>Available</h3>
                 </div>
 
-                <div className='notification'>
-                    
+                <div className='notification-toggle' onClick={availabilityStatus}>
+                    <IonIcon icon={toggleOutline}></IonIcon>
                 </div>
             </div>
         </IonContent>

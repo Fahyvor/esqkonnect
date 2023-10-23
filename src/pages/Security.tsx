@@ -38,7 +38,7 @@ const Security:React.FC = () => {
                     'Authorization': `Bearer ${token}`
                 },
             });
-            console.log('Password Successfully Changed', updatedPassword)
+            console.log('Password Successfully Changed', updatedPassword);
         } catch (error) {
             console.log('Password Update Unsuccessful', error);
             console.log('Password Not Changed', error.message)

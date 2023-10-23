@@ -8,7 +8,7 @@ const Lawyer: React.FC = () => {
     <IonPage>
         <IonContent>
             <div className='lawyer-welcome'>
-                <div className='lawyer-image'>
+                <div className='lawyer_image'>
                     <img src={LawyerImage} alt='lawyer' />
                 </div>
 

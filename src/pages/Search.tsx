@@ -88,7 +88,7 @@ const Search = () => {
 
                     <div className='experience-year'>
                         <h5>Exp</h5>
-                        <p>{lawyer.lawyer.years_of_practice}+  years</p>
+                        <p>{lawyer.years_of_practice ? `${lawyer.years_of_practice}+ years` : 'Experience not specified'}</p>
                     </div>
 
                     <div className='location'>

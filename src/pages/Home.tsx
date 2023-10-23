@@ -71,7 +71,7 @@ const Home:React.FC = () => {
                             </div>
 
                             <div className='lawyers-containers'>
-                                <div className='lawyers-image'>
+                                <div className='lawyers-home-image'>
                                     <img src={Lawyer2} />
                                 </div>
 
